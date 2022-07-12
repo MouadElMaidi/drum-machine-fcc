@@ -35,6 +35,16 @@
   cursor: pointer;
 }
 
+.drum-pad:disabled {
+  color: black;
+}
+
+.drum-pad:active {
+  background-color: orange;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 /*Right side*/
 
 .controller {
@@ -56,10 +66,17 @@
   background-color: black;
   cursor: pointer;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   border: 3px solid black;
   border-bottom: 4px solid black;
+}
+
+.on {
+  justify-content: flex-end;
+}
+
+.off {
+  justify-content: flex-start;
 }
 
 .toggler--slider--square {
@@ -70,7 +87,11 @@
 
 .display {
   background: #808080;
-  padding: 20px 70px;
+  width: 80%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*Slider CSS*/

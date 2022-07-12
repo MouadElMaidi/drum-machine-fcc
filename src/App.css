@@ -1,38 +1,103 @@
-.App {
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: #c0c0c0;
+  width: 50%;
+  height: 300px;
+  margin: 0 auto;
+  border: 4px solid orange;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.button-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.drum-pad {
+  background: #808080;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px;
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 20px;
+}
+
+/*Right side*/
+
+.controller {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.toggler>* {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.toggler--slider {
+  width: 55px;
+  height: 24px;
+  background-color: black;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 3px solid black;
+  border-bottom: 4px solid black;
 }
 
-.App-link {
-  color: #61dafb;
+.toggler--slider--square {
+  height: 100%;
+  width: 21px;
+  background-color: blue;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.display {
+  background: #808080;
+  padding: 20px 70px;
+}
+
+/*Slider CSS*/
+.range {
+  width: 100%;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #404040;
+  border: 1px solid black;
+  box-shadow: 3px 3px 5px  black;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 25px;
+  background: blue;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px  black;
+}
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 25px;
+  background: blue;
+  cursor: pointer;
 }

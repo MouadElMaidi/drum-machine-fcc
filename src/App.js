@@ -1,5 +1,6 @@
 import './App.css';
 import React from "react";
+/* First Bank import */
 import clap from './bank1/707-clap.wav'
 import ambientKick from './bank1/ambient_kick.wav'
 import ecKick from './bank1/ec-kik050.wav'
@@ -21,14 +22,20 @@ function App() {
   const displayName = varToString({ clap })
   */
 
+  function playAudio(event) {
+    const audioDOM = event.target.firstElementChild;
+    audioDOM.play();
+  }
+
   const drumPads = drumKeys.map(drumpad => {
     return (
-      <div className="drum-pad" key={drumpad.key}>
+      <button className="drum-pad" key={drumpad.key}
+        onClick={(event) => playAudio(event)}>
         {drumpad.key}
-        <audio controls>
+        <audio>
           <source src={drumpad.sound} type="audio/wav"></source>
         </audio>
-      </div>
+      </button>
     )
   })
 
